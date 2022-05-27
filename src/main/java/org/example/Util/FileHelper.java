@@ -1,41 +1,44 @@
 package org.example.Util;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class FileHelper {
     private static ArrayList<String> lines;
 
-    public static BufferedReader openFile() throws IOException {
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new InputStreamReader(new FileInputStream("TA_PRECO_MEDICAMENTO teste.csv")));
-            lines = new ArrayList<>();
-            String lineRead = reader.readLine();
-            while (lineRead != null) {
-                lines.add(lineRead);
-                lineRead = reader.readLine();
-                System.out.println(lineRead);
-            }
-            formatLines();
+    protected static ArrayList<String> openFile(){
+        lines = new ArrayList<>();
+        File file = new File("TA_PRECO_MEDICAMENTO teste.csv");
+        try (FileInputStream fis = new FileInputStream(file);
+             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+             BufferedReader br = new BufferedReader(isr)
+            ) {
+                String lineRead;
+                while ((lineRead = br.readLine()) != null) {
+                    lines.add(lineRead);
+                }
+            return lines;
         } catch (IOException e) {
-            System.out.println("Error");
+            throw new RuntimeException(e);
         }
-        return reader;
     }
-
-    public static void formatLines() throws IOException {
-        for(int i = 0; i<lines.size(); i++){
-            if(hasMultipleSubstances(lines.get(i))){
-                String correcao = formatLine(lines.get(i));
-                lines.set(i, correcao);
-                System.out.println(lines.get(i));
+    protected static ArrayList<String> formatLines(ArrayList<String> lineList){
+        for(int i = 0; i<lineList.size(); i++){
+            if(hasMultipleSubstances(lineList.get(i))){
+                String fix = formatLine(lineList.get(i));
+                lineList.set(i, fix);
             }
         }
+        return lineList;
     }
 
     public static ArrayList<String> getLines(){
-        return lines;
+        return formatLines(openFile());
+    }
+
+    public static String getLineByIndex(int index){
+        return getLines().get(index);
     }
 
     private static String formatLine(String line) {

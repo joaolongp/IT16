@@ -4,17 +4,20 @@ import org.example.Objects.ListasConcessao;
 import org.example.Objects.Medicamento;
 import org.example.Objects.Tarja;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
 public class MedicamentoHelper {
     public static Medicamento criarMedicamento(String[] atributos){
         Medicamento medicamento = new Medicamento();
         medicamento.setSubstancia(atributos[0]);
         medicamento.setCnpj(atributos[1]);
         medicamento.setLab(atributos[2]);
-        medicamento.setGGREM(atributos[3]);
-        medicamento.setRegistro(atributos[4]);
-        medicamento.setEan1(atributos[5]);
-        medicamento.setEan2(atributos[6]);
-        medicamento.setEan3(atributos[7]);
+        medicamento.setGGREM(formatNotation(atributos[3]));
+        medicamento.setRegistro(formatNotation(atributos[4]));
+        medicamento.setEan1(formatNotation(atributos[5]));
+        medicamento.setEan2(formatNotation(atributos[6]));
+        medicamento.setEan3(formatNotation(atributos[7]));
         medicamento.setProduto(atributos[8]);
         medicamento.setApresentacao(atributos[9]);
         medicamento.setClasse(atributos[10]);
@@ -45,12 +48,29 @@ public class MedicamentoHelper {
         medicamento.setIcmsZero(Boolean.parseBoolean(atributos[35]));
         medicamento.setAnaliseRecursal(atributos[36]);
         medicamento.setListaConcessaoCredito(ListasConcessao.valueOf(atributos[37]));
-        medicamento.setComercializacao2020(Boolean.parseBoolean(atributos[38]));
+        medicamento.setComercializacao2020(isComercializado(atributos[38]));
         medicamento.setTarja(tarja(atributos[39]));
         return medicamento;
     }
 
-    private static float formatPrice(String price){
+    private static boolean isComercializado(String atributo) {
+        if(atributo.contains("Sim")){
+            return true;
+        }
+        return false;
+    }
+
+    private static String formatNotation(String atributo) {
+        if(atributo.contains("-")){
+            return atributo;
+        }
+        return new BigDecimal(Double.parseDouble(atributo.replace(",", "."))).toPlainString();
+    }
+
+    private static Float formatPrice(String price){
+        if(price.isEmpty()){
+            return null;
+        }
         price = price.replace(",",".");
         return Float.parseFloat(price);
     }
@@ -63,5 +83,13 @@ public class MedicamentoHelper {
             return Tarja.Preta;
         }
         return Tarja.Livre;
+    }
+
+    public static ArrayList<Medicamento> criarListaMedicamentos(ArrayList<String> fileLines){
+        ArrayList<Medicamento> medicamentos = new ArrayList<>();
+        for (int i = 1; i<fileLines.size(); i++){
+            medicamentos.add(criarMedicamento(fileLines.get(i).split(";")));
+        }
+        return medicamentos;
     }
 }

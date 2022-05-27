@@ -1,7 +1,6 @@
 package org.example.Objects;
 
 public class Medicamento{
-
     String substancia = "";
     String cnpj = "";
     String lab = "";
@@ -15,25 +14,25 @@ public class Medicamento{
     String classe = "";
     String tipo = "";
     String regimePreco = "";
-    float pf;
-    float pf0;
-    float pf12;
-    float pf17;
-    float pf17ALC;
-    float pf175;
-    float pf175ALC;
-    float pf18;
-    float pf18ALC;
-    float pf20;
-    float pmc0;
-    float pmc12;
-    float pmc17;
-    float pmc17ALC;
-    float pmc175;
-    float pmc175ALC;
-    float pmc18;
-    float pmc18ALC;
-    float pmc20;
+    Float pf;
+    Float pf0;
+    Float pf12;
+    Float pf17;
+    Float pf17ALC;
+    Float pf175;
+    Float pf175ALC;
+    Float pf18;
+    Float pf18ALC;
+    Float pf20;
+    Float pmc0;
+    Float pmc12;
+    Float pmc17;
+    Float pmc17ALC;
+    Float pmc175;
+    Float pmc175ALC;
+    Float pmc18;
+    Float pmc18ALC;
+    Float pmc20;
     boolean restricao;
     boolean cap;
     boolean confaz87;
@@ -147,155 +146,155 @@ public class Medicamento{
         this.regimePreco = regimePreco;
     }
 
-    public float getPf() {
+    public Float getPf() {
         return pf;
     }
 
-    public void setPf(float pf) {
+    public void setPf(Float pf) {
         this.pf = pf;
     }
 
-    public float getPf0() {
+    public Float getPf0() {
         return pf0;
     }
 
-    public void setPf0(float pf0) {
+    public void setPf0(Float pf0) {
         this.pf0 = pf0;
     }
 
-    public float getPf12() {
+    public Float getPf12() {
         return pf12;
     }
 
-    public void setPf12(float pf12) {
+    public void setPf12(Float pf12) {
         this.pf12 = pf12;
     }
 
-    public float getPf17() {
+    public Float getPf17() {
         return pf17;
     }
 
-    public void setPf17(float pf17) {
+    public void setPf17(Float pf17) {
         this.pf17 = pf17;
     }
 
-    public float getPf17ALC() {
+    public Float getPf17ALC() {
         return pf17ALC;
     }
 
-    public void setPf17ALC(float pf17ALC) {
+    public void setPf17ALC(Float pf17ALC) {
         this.pf17ALC = pf17ALC;
     }
 
-    public float getPf175() {
+    public Float getPf175() {
         return pf175;
     }
 
-    public void setPf175(float pf175) {
+    public void setPf175(Float pf175) {
         this.pf175 = pf175;
     }
 
-    public float getPf175ALC() {
+    public Float getPf175ALC() {
         return pf175ALC;
     }
 
-    public void setPf175ALC(float pf175ALC) {
+    public void setPf175ALC(Float pf175ALC) {
         this.pf175ALC = pf175ALC;
     }
 
-    public float getPf18() {
+    public Float getPf18() {
         return pf18;
     }
 
-    public void setPf18(float pf18) {
+    public void setPf18(Float pf18) {
         this.pf18 = pf18;
     }
 
-    public float getPf18ALC() {
+    public Float getPf18ALC() {
         return pf18ALC;
     }
 
-    public void setPf18ALC(float pf18ALC) {
+    public void setPf18ALC(Float pf18ALC) {
         this.pf18ALC = pf18ALC;
     }
 
-    public float getPf20() {
+    public Float getPf20() {
         return pf20;
     }
 
-    public void setPf20(float pf20) {
+    public void setPf20(Float pf20) {
         this.pf20 = pf20;
     }
 
-    public float getPmc0() {
+    public Float getPmc0() {
         return pmc0;
     }
 
-    public void setPmc0(float pmc0) {
+    public void setPmc0(Float pmc0) {
         this.pmc0 = pmc0;
     }
 
-    public float getPmc12() {
+    public Float getPmc12() {
         return pmc12;
     }
 
-    public void setPmc12(float pmc12) {
+    public void setPmc12(Float pmc12) {
         this.pmc12 = pmc12;
     }
 
-    public float getPmc17() {
+    public Float getPmc17() {
         return pmc17;
     }
 
-    public void setPmc17(float pmc17) {
+    public void setPmc17(Float pmc17) {
         this.pmc17 = pmc17;
     }
 
-    public float getPmc17ALC() {
+    public Float getPmc17ALC() {
         return pmc17ALC;
     }
 
-    public void setPmc17ALC(float pmc17ALC) {
+    public void setPmc17ALC(Float pmc17ALC) {
         this.pmc17ALC = pmc17ALC;
     }
 
-    public float getPmc175() {
+    public Float getPmc175() {
         return pmc175;
     }
 
-    public void setPmc175(float pmc175) {
+    public void setPmc175(Float pmc175) {
         this.pmc175 = pmc175;
     }
 
-    public float getPmc175ALC() {
+    public Float getPmc175ALC() {
         return pmc175ALC;
     }
 
-    public void setPmc175ALC(float pmc175ALC) {
+    public void setPmc175ALC(Float pmc175ALC) {
         this.pmc175ALC = pmc175ALC;
     }
 
-    public float getPmc18() {
+    public Float getPmc18() {
         return pmc18;
     }
 
-    public void setPmc18(float pmc18) {
+    public void setPmc18(Float pmc18) {
         this.pmc18 = pmc18;
     }
 
-    public float getPmc18ALC() {
+    public Float getPmc18ALC() {
         return pmc18ALC;
     }
 
-    public void setPmc18ALC(float pmc18ALC) {
+    public void setPmc18ALC(Float pmc18ALC) {
         this.pmc18ALC = pmc18ALC;
     }
 
-    public float getPmc20() {
+    public Float getPmc20() {
         return pmc20;
     }
 
-    public void setPmc20(float pmc20) {
+    public void setPmc20(Float pmc20) {
         this.pmc20 = pmc20;
     }
 
@@ -361,5 +360,51 @@ public class Medicamento{
 
     public void setTarja(Tarja tarja) {
         this.tarja = tarja;
+    }
+
+    @Override
+    public String toString() {
+        return "Medicamento{" +
+                "substancia='" + substancia + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", lab='" + lab + '\'' +
+                ", GGREM='" + GGREM + '\'' +
+                ", registro='" + registro + '\'' +
+                ", ean1='" + ean1 + '\'' +
+                ", ean2='" + ean2 + '\'' +
+                ", ean3='" + ean3 + '\'' +
+                ", produto='" + produto + '\'' +
+                ", apresentacao='" + apresentacao + '\'' +
+                ", classe='" + classe + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", regimePreco='" + regimePreco + '\'' +
+                ", pf=" + pf +
+                ", pf0=" + pf0 +
+                ", pf12=" + pf12 +
+                ", pf17=" + pf17 +
+                ", pf17ALC=" + pf17ALC +
+                ", pf175=" + pf175 +
+                ", pf175ALC=" + pf175ALC +
+                ", pf18=" + pf18 +
+                ", pf18ALC=" + pf18ALC +
+                ", pf20=" + pf20 +
+                ", pmc0=" + pmc0 +
+                ", pmc12=" + pmc12 +
+                ", pmc17=" + pmc17 +
+                ", pmc17ALC=" + pmc17ALC +
+                ", pmc175=" + pmc175 +
+                ", pmc175ALC=" + pmc175ALC +
+                ", pmc18=" + pmc18 +
+                ", pmc18ALC=" + pmc18ALC +
+                ", pmc20=" + pmc20 +
+                ", restricao=" + restricao +
+                ", cap=" + cap +
+                ", confaz87=" + confaz87 +
+                ", icmsZero=" + icmsZero +
+                ", analiseRecursal='" + analiseRecursal + '\'' +
+                ", listaConcessaoCredito=" + listaConcessaoCredito +
+                ", comercializacao2020=" + comercializacao2020 +
+                ", tarja=" + tarja +
+                '}';
     }
 }
